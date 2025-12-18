@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/ghie/demo-web
+  tag: v0.1.0-dev
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80

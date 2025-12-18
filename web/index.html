@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fintexa - Demo Web</title>
+  </head>
+  <body>
+    <h1>Fintexa Demo Web</h1>
+    <p id="status">Loading...</p>
+
+    <script>
+      fetch("/health")
+        .then(r => r.json())
+        .then(d => {
+          document.getElementById("status").innerText =
+            `Backend: ${d.status} (env: ${d.env})`;
+        })
+        .catch(() => {
+          document.getElementById("status").innerText =
+            "Backend not reachable";
+        });
+    </script>
+  </body>
+</html>
