@@ -6,6 +6,6 @@ spec:
     type: {{ .Values.service.type }}
     selector:
         app: {{ .Release.Name }}
-        ports:
-            - port: {{ .Values.service.port }}
-              targetPort: 80    
+    ports:
+        - port: {{ .Values.service.port }}
+            targetPort: 80    
